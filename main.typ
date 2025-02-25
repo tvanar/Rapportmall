@@ -29,13 +29,13 @@
   handledare: handledare,
 
   //Settings
-  firstpage: true,
-  lang: "sv",
+  firstpage: false,
+  lang: "sv", //sv or en
   toc: true,
   indent: false,
   ncols: 2,
 
-  abstract_style: "page",
+  abstract_style: "page", // page or runin or none
   abstract: "Detta är en abstract. " + lorem(80)
 )
 
@@ -43,5 +43,3 @@
 #include "chapters/introduktion.typ"
 
 #include "chapters/metod.typ"
-
-

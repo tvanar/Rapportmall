@@ -93,7 +93,7 @@ set page(
     #kurs, #kurskod
     #line(length: 100%, stroke: 0.2pt)]
   ],
-  numbering: (..i)=> "Sida " + str(i.at(0)) +" av " + str(i.at(-1)),
+  numbering: if not firstpage and lang == "sv" {(..i)=> "Sida " + str(i.at(0)) +" av " + str(i.at(-1))} else {"1"},
   columns: ncols
 )
 
@@ -102,12 +102,10 @@ set columns(gutter: 16pt)
 set table(stroke: 0.3pt)
 
 
-let spacing = if indent { 0.65em } else { 1.2em }
-let indent = if indent {1.5em} else {0em}
 set par(
   justify: true,
-  first-line-indent: indent,
-  spacing: spacing
+  first-line-indent: if indent {1.5em} else {0em},
+  spacing: if indent { 0.65em } else { 1.2em }
 )
 
 set heading(numbering: "1.1.1")
@@ -188,6 +186,8 @@ titlepage(
 }
 
 set math.equation(numbering: "(1)")
+
+
 
 if abstract_style  == "runin" [
   *_Abstract_---#abstract*
