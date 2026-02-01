@@ -1,0 +1,6 @@
+[package]
+name = "mall"
+version = "1.0.0"
+entrypoint = "template.typ"
+authors = [Enar Sundgren]
+description = "A private template."
